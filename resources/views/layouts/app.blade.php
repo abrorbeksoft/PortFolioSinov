@@ -12,20 +12,29 @@
 </head>
 <body>
 
+{{-- navbar --}}
 @livewire('navbar')
 
-<div class="row">
-    <div class="container">
-        <div class="col-md-3">
+{{-- content--}}
+<div class="container ">
+    <div class="row mt-2">
+        <div class="col-md-2 badge-dark">
             @livewire('sidebar')
         </div>
-        <div class="col-md-9">
+        <div class="col-md-8">
             @yield('content')
+        </div>
+        <div class="col-md-2">
+            <h1>Here will be reklama</h1>
         </div>
     </div>
 </div>
 
 
+{{--footer--}}
+<div class="container">
+    <h1>Here will be footer</h1>
+</div>
 
 @livewireScripts
 </body>
