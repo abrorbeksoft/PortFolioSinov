@@ -21,7 +21,7 @@
         <div class="col-md-2 badge-dark">
             @livewire('sidebar')
         </div>
-        <div class="col-md-8">
+        <div  class="col-md-8 ">
             @yield('content')
         </div>
         <div class="col-md-2">
