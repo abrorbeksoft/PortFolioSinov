@@ -1,0 +1,19 @@
+a{
+    text-decoration: none !important;
+    color: inherit !important;
+}
+.list-item{
+    padding: 10px;
+}
+.list-item:hover{
+    background-color: #1e7e34;
+    color: white;
+}
+.active{
+    background-color: #1e7e34;
+    color: white;
+}
+
+.navbar-logo{
+    padding: 10px;
+}
