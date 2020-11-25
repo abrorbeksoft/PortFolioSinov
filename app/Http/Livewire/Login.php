@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
 class Login extends Component
@@ -11,6 +12,8 @@ class Login extends Component
     public $login;
     public $password;
     public $custom_error;
+    public $temp1;
+    public $temp2;
 
     protected $rules=[
         'login'=>'required|min:6|max:200',
@@ -27,21 +30,25 @@ class Login extends Component
         $this->validateOnly($password);
     }
 
+
+
     public function save()
     {
         $this->validate();
-        $user=User::query();
+        $user=User::where([['login','=',$this->login],['password','=',$this->password]])->first();
+//        $user=User::query();
+//        $user->where('login','=',$this->login);
+//        $user->where('password','=',$this->password);
+//        $user->first();
+//        var_dump($user);
+//        $this->temp1=$user->token;
+//        $this->temp2=$user->auth;
 
-        try {
-            $user->where('login',$this->login);
-            $user->get();
-        }
-        catch (\Exception $exception)
+        if (isset($user))
         {
-            $this->custom_error=$exception->getMessage();
+            Auth::login($user);
+            return redirect()->to('/news');
         }
-        $user->where('password',$this->password);
-        $user->get();
 
 
     }
