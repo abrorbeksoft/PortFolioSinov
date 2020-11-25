@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Http\Livewire\Admin;
 
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
@@ -8,7 +8,6 @@ use Livewire\Component;
 
 class Login extends Component
 {
-
     public $login;
     public $password;
     public $custom_error;
@@ -37,17 +36,17 @@ class Login extends Component
         $user=User::where([['login','=',$this->login],['password','=',$this->password]])->first();
 
 
-        if (isset($user))
+        if (isset($user) && $user->auth=="admin")
         {
             Auth::login($user);
-            return redirect()->to('/news');
+            return redirect()->to('/admin/news');
         }
 
 
-    }
 
+    }
     public function render()
     {
-        return view('livewire.login');
+        return view('livewire.admin.login');
     }
 }

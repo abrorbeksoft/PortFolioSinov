@@ -23,3 +23,9 @@ Route::get('/news',[\App\Http\Controllers\NewsController::class,"getNews"]);
 Route::get('/myposts',[\App\Http\Controllers\NewsController::class,"getPosts"]);
 Route::get('/profile',[\App\Http\Controllers\ProfileController::class,'profile']);
 
+Route::prefix('/admin')->group(function (){
+
+    Route::get('/',[\App\Http\Controllers\Admin\AdminController::class,"login"]);
+    Route::get('/news',[\App\Http\Controllers\Admin\AdminController::class,'news']);
+
+});
