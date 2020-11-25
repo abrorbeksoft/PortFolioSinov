@@ -2,17 +2,17 @@
 
 namespace Database\Factories;
 
-use App\Models\News;
+use App\Models\Image;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class NewsFactory extends Factory
+class ImageFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = News::class;
+    protected $model = Image::class;
 
     /**
      * Define the model's default state.
@@ -22,9 +22,9 @@ class NewsFactory extends Factory
     public function definition()
     {
         return [
-            'title'=>$this->faker->sentence(4),
-            'text'=>$this->faker->paragraph(4),
-            'user_id'=>$this->faker->numberBetween(2,30),
+            'name'=>$this->faker->imageUrl(300,400,'animals'),
+            'imageable_id'=>$this->faker->numberBetween(1,40),
+            'imageable_type'=>"App\Models\News"
         ];
     }
 }

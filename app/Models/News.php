@@ -17,4 +17,6 @@ class News extends Model
     }
 
 
+
+
 }
