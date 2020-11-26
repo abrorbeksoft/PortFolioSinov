@@ -16,7 +16,15 @@ class News extends Model
         return $this->belongsTo(User::class,'user_id','id');
     }
 
+    public function image()
+    {
+        return $this->morphOne(Image::class,'imageable');
+    }
 
+    public function comments()
+    {
+        return $this->morphMany(Comment::class,'commentable');
+    }
 
 
 }

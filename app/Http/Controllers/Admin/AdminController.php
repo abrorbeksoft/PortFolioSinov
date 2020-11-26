@@ -16,5 +16,15 @@ class AdminController extends Controller
         return view('admin.news');
     }
 
+    public function update()
+    {
+        return view('admin.update');
+    }
+
+    public function add()
+    {
+        return view('admin.add');
+    }
+
 
 }

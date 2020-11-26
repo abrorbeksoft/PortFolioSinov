@@ -27,5 +27,7 @@ Route::prefix('/admin')->group(function (){
 
     Route::get('/',[\App\Http\Controllers\Admin\AdminController::class,"login"]);
     Route::get('/news',[\App\Http\Controllers\Admin\AdminController::class,'news']);
+    Route::get('/update',[\App\Http\Controllers\Admin\AdminController::class,'update']);
+    Route::get('/add',[\App\Http\Controllers\Admin\AdminController::class,'add']);
 
 });

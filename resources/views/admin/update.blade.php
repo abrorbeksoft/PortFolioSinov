@@ -1,5 +1,5 @@
 @extends('admin.app')
 
 @section('content')
-    @livewire('admin.news')
+    <h1>Update</h1>
 @endsection
