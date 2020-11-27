@@ -8,12 +8,12 @@
                 @guest
                     <div class="list-item"><a class="list-link" href="{{ route('login') }}">Login</a></div>
                     <div class="list-item"><a class="list-link" href="{{ route('register') }}">Register</a></div>
-                    <div class="list-item"><a class="list-link" href="{{ url('/news') }}">News</a></div>
+                    <div class="list-item"><a class="list-link" href="{{ url('/') }}">News</a></div>
 
                 @endguest
 
                 @auth
-                    <div class="list-item"><a class="list-link" href="{{ url('/news') }}">News</a></div>
+                    <div class="list-item"><a class="list-link" href="{{ url('/') }}">News</a></div>
                     <div class="list-item"><a class="list-link" href="{{ url('/myposts') }}">My posts</a></div>
                     <div class="list-item"><a class="list-link" href="{{ url('/profile') }}">Profile</a></div>
                     <div class="list-item"><div class="list-link" wire:click="logout" >Logout</div></div>

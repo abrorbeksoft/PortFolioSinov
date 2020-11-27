@@ -40,7 +40,7 @@ class Login extends Component
         if (isset($user))
         {
             Auth::login($user);
-            return redirect()->to('/news');
+            return redirect()->to('/');
         }
 
 

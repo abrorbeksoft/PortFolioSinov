@@ -13,13 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [\App\Http\Controllers\NewsController::class,'getNews']);
 
 Route::get('/login',[\App\Http\Controllers\Auth\AuthController::class,'showLoginForm'])->name('login');
 Route::get('/register',[\App\Http\Controllers\Auth\AuthController::class,'showRegistrationForm'])->name('register');
-Route::get('/news',[\App\Http\Controllers\NewsController::class,"getNews"]);
+//Route::get('/news',[\App\Http\Controllers\NewsController::class,"getNews"]);
 Route::get('/myposts',[\App\Http\Controllers\NewsController::class,"getPosts"]);
 Route::get('/profile',[\App\Http\Controllers\ProfileController::class,'profile']);
 

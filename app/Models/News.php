@@ -9,6 +9,8 @@ class News extends Model
 {
     use HasFactory;
 
+    protected $fillable=['image'];
+
     protected $guarded=[];
 
     public function user()
@@ -18,7 +20,7 @@ class News extends Model
 
     public function image()
     {
-        return $this->morphOne(Image::class,'imageable');
+        return $this->morphOne(Image::class,'imageable')->withDefault();
     }
 
     public function comments()
