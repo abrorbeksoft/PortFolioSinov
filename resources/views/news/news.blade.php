@@ -1,5 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-    @livewire('show-news')
+{{--    <div>{{ $user->name }}</div>--}}
+    <livewire:show-news  >
 @endsection

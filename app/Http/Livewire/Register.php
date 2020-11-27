@@ -45,6 +45,7 @@ class Register extends Component
         $user->token=\Illuminate\Support\Str::random(60);
         $user->save();
         Auth::login($user);
+        return redirect()->to('/');
     }
 
     public function render()

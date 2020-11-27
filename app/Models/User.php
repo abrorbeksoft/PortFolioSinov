@@ -20,6 +20,8 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'image',
+        'news'
     ];
 
     /**
@@ -32,6 +34,8 @@ class User extends Authenticatable
         'remember_token',
     ];
 
+    protected $guarded=[];
+
     /**
      * The attributes that should be cast to native types.
      *
@@ -43,5 +47,10 @@ class User extends Authenticatable
 
     public function news(){
         return $this->hasMany(News::class,'user_id','id');
+    }
+
+    public function image()
+    {
+        return $this->morphOne(Image::class,'imageable')->withDefault();
     }
 }
