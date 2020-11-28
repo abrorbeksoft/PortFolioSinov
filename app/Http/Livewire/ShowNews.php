@@ -2,7 +2,6 @@
 
 namespace App\Http\Livewire;
 
-use App\Http\Resources\NewsCollection;
 use App\Models\News;
 use Livewire\Component;
 use Livewire\WithPagination;
@@ -12,6 +11,7 @@ class ShowNews extends Component
     use WithPagination;
 
     protected $paginationTheme="bootstrap";
+
 
     public function render()
     {

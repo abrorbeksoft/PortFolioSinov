@@ -10,6 +10,10 @@
                 <div class="card-text">
                     {{ $value->text }}
                 </div>
+                <div class="text-right" >
+                    {{ $value->comments->count() }} <span class="ml-1" >comments</span>
+                </div>
+                @livewire('comment', ['news'=>$value] )
             </div>
         </div>
     </div>
