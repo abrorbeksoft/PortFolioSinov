@@ -19,6 +19,7 @@ Route::get('/login',[\App\Http\Controllers\Auth\AuthController::class,'showLogin
 Route::get('/register',[\App\Http\Controllers\Auth\AuthController::class,'showRegistrationForm'])->name('register');
 //Route::get('/news',[\App\Http\Controllers\NewsController::class,"getNews"]);
 Route::get('/myposts',[\App\Http\Controllers\NewsController::class,"getPosts"]);
+Route::get('/create',[\App\Http\Controllers\NewsController::class,"createPost"]);
 Route::get('/profile',[\App\Http\Controllers\ProfileController::class,'profile']);
 
 Route::prefix('/admin')->group(function (){
