@@ -47,7 +47,6 @@
                     </div>
                     @enderror
                 </div>
-                <input type="hidden" value="{{ $updating->id }}">
                 <div class="form-group">
                     <input wire:model="file" type="file" class="form-control @error('file') is-invalid @enderror">
                     @error('file')
@@ -65,7 +64,7 @@
                 <th>title</th>
                 <th>text</th>
             </tr>
-            @foreach($updating->comments as $c)
+            @foreach($unews->comments as $c)
                 <tr>
                     <td>{{ $c->id }}</td>
                     <td>{{ $c->title }}</td>

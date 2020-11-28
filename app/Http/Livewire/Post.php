@@ -17,7 +17,7 @@ class Post extends Component
     public $titleTemp;
     public $textTemp;
     public $file;
-    public $updating;
+    public $unews;
 
     protected $rules=[
         'titleTemp'=>'required|string|min:15',
@@ -33,7 +33,7 @@ class Post extends Component
         $this->updatePanel='active';
         $this->titleTemp=$news->title;
         $this->textTemp=$news->text;
-        $this->updating=$news;
+        $this->unews=$news;
     }
 
     public function delete($id)
@@ -48,14 +48,15 @@ class Post extends Component
     {
         $this->validate();
 
+        Storage::delete($this->unews->name);
         $path=Storage::putFile('images',$this->file);
-        $prefer=$this->updating;
-        Storage::delete($this->updating->image->name);
+        $prefer=$this->unews;
         $prefer->title=$this->titleTemp;
         $prefer->text=$this->textTemp;
         $prefer->image()->update([
             'name'=>$path
         ]);
+        $prefer->update();
         return redirect()->to('/myposts');
 
     }
